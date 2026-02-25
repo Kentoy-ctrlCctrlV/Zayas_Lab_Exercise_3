@@ -29,6 +29,8 @@ export class App {
 
   cartCount = computed(() => this.cart().length);
 
+  total = computed(() => this.cart().reduce((sum, item) => sum + item.price, 0));
+
   addToCart(product: Product) {
     this.cart.update(cart => [...cart, product]);
     alert(`${product.name} added to cart!`);
