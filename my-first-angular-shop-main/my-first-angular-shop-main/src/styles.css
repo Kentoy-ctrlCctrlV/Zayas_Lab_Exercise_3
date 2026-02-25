@@ -1,0 +1,111 @@
+/* Core Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Updated Logo Section: Both ZYS and GUITARS will now be gold */
+.logo { 
+  font-weight: 800; 
+  letter-spacing: 3px; 
+  font-size: 1.3rem; 
+  color: #d4af37; 
+  text-transform: uppercase;
+}
+
+.logo span { 
+  color: #d4af37; 
+}
+
+.nav-links { list-style: none; display: flex; gap: 2.5rem; }
+.nav-links a { color: #888; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+.nav-links a:hover { color: #d4af37; }
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-bottom: 1px solid #d4af37;
+}
+
+.hero-section h1 { font-size: 3.5rem; letter-spacing: 8px; color: #d4af37; margin: 0; }
+.hero-section p { color: #666; text-transform: uppercase; letter-spacing: 4px; margin-top: 10px; }
+
+/* Product Grid */
+.container { max-width: 1200px; margin: 0 auto; padding: 60px 2rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+
+/* Card Styling */
+.card {
+  background: #161616;
+  border: 1px solid #222;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  border-radius: 4px;
+}
+
+.card:hover { transform: translateY(-10px); border-color: #d4af37; }
+
+.tag {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: #d4af37; color: #000;
+  font-size: 0.6rem; font-weight: 900; padding: 4px 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img { transform: scale(1.05); }
+
+.card h3 { font-size: 1.2rem; margin-bottom: 10px; color: #fff; }
+.card p { color: #888; font-size: 0.85rem; margin-bottom: 20px; height: 40px; }
+.price { color: #d4af37; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; }
+
+/* Buttons */
+.buy-btn {
+  background: transparent;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 12px;
+  width: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-btn:hover { background: #d4af37; color: #000; }
+
+footer { text-align: center; padding: 40px 0; border-top: 1px solid #222; color: #444; font-size: 0.8rem; margin-top: 40px; }

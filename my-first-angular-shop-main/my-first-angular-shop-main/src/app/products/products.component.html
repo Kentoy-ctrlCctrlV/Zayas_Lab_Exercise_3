@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="product-grid">
+    <div class="card" *ngFor="let item of products">
+      <div class="tag" *ngIf="item.available">NEW</div>
+      <h3>{{ item.name }}</h3>
+      
+      <p *ngIf="item.available; else outOfStock">
+        Price: ${{ item.price }}
+      </p>
+
+      <ng-template #outOfStock>
+        <p style="color: #ff4d4d; font-weight: bold;">Out of Stock</p>
+      </ng-template>
+
+      <button class="buy-btn" (click)="addToCart(item)" [disabled]="!item.available">
+        {{ item.available ? 'Add to Cart' : 'Unavailable' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="cart-box" *ngIf="cart.length > 0">
+    <h2>Shopping Cart</h2>
+    <div class="cart-item" *ngFor="let selected of cart">
+      <span>{{ selected.name }}</span>
+      <span class="gold-text">${{ selected.price }}</span>
+    </div>
+    <div class="cart-total">
+      <span>Total:</span>
+      <span class="gold-text">${{ totalCost | number:'1.2-2' }}</span>
+    </div>
+    <button class="buy-btn" (click)="clearCart()" style="margin-top: 20px; width: auto; padding: 10px 30px;">
+      Clear Cart
+    </button>
+  </div>
+</div>
